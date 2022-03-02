@@ -1,0 +1,15 @@
+{% extends 'base_notailwind.html' %}
+{% load static %}
+{% load article_extras %}
+
+{% block title %}    {{ post.title }} {% endblock title %}
+{% block content %}
+
+<div class="container">
+
+    {{ post.content|convert_markdown|safe }}
+
+</div>
+
+
+{% endblock content %}

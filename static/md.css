@@ -1,0 +1,45 @@
+html{
+    font-family: 'Open Sans', sans-serif;
+}
+
+body{
+    margin-right: 30rem;
+    margin-left: 30rem;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 250px;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    height: auto;
+
+    text-align: left;
+    
+}
+
+
+
+hr {
+    border:  solid #38a169;
+    border-radius: 5px;
+    width: 100%;
+}
+
+code {
+    color: red;
+}
+

@@ -1,0 +1,210 @@
+{% extends 'base.html' %}
+{% load article_extras %}
+{% load static %}
+{% block content %}
+
+<div class="flex flex-col items-center justify-center mx-auto min-h-screen">
+
+    <h1 class="font-bold text-4xl mb-3">SHAP IT Knowledge Base</h1>
+
+    <div class="grid grid-cols-4 gap-3 text-center">
+        <!-- Internal Tools -->
+        <div class="relative bg-white shadow-lg rounded-md p-6 font-semibold text-xl tracking-wide">
+            <h1 class="text-2xl text-green-600 bg-gray-50 shadow p-1 rounded mb-2">Internal Tools</h1>
+            <ul class="space-y-3 mb-8">
+                <li class="text-green-800 text-sm tracking-tight">👨‍🚀 Super Important Link</li>
+                <li class="text-green-800 text-sm tracking-tight">👨‍🚀 Super Important Link</li>
+
+                <li class="text-green-800 text-sm tracking-tight">👨‍🚀 Super Important Link</li>
+                <li class="text-green-800 text-sm tracking-tight">👨‍🚀 Super Important Link</li>
+                <li class="text-green-800 text-sm tracking-tight">👨‍🚀 Super Important Link</li>
+                <li class="text-green-800 text-sm tracking-tight">👨‍🚀 Super Important Link</li>
+                <li class="text-green-800 text-sm tracking-tight">👨‍🚀 Super Important Link</li>
+
+            </ul>
+            <div class="flex absolute bottom-0  right-0 m-2 p-1 items-center bg-green-600 rounded-lg">
+
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+</svg>      <h2 class="text-white text-xs ">
+            
+            Go to page</h2>
+            </div>
+      
+        </div>
+        <!-- Internal Tools -->
+
+
+        <!-- Network -->
+        <div class="relative bg-white shadow-lg rounded-md p-6 font-semibold text-xl tracking-wide">
+            <h1 class="text-2xl text-green-600 bg-gray-50 shadow p-1 rounded mb-2">Network</h1>
+                      <ul class="space-y-3 mb-8">
+
+                {% for network in networks %}
+                   <li class="text-green-800 text-sm tracking-tight"><a href="{% url 'view_post' network.id %}">{{ network.title }}</a></li> 
+                {% endfor %}
+
+
+            </ul>
+              <div class="flex absolute bottom-0  right-0 m-2 p-1 items-center bg-green-600 rounded-lg">
+
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+</svg>      <h2 class="text-white text-xs ">
+            
+            Go to page</h2>
+            </div>
+      
+        </div>
+        <!-- Network -->
+
+        <!-- Nas -->
+        <div class="relative bg-white shadow-lg rounded-md p-6 font-semibold text-xl tracking-wide">
+            <h1 class="text-2xl text-green-600 bg-gray-50 shadow p-1 rounded mb-2">NAS</h1>
+                      <ul class="space-y-3 mb-8">
+                <li class="text-green-800 text-sm tracking-tight">👨‍🚀 Super Important Link</li>
+                <li class="text-green-800 text-sm tracking-tight">👨‍🚀 Super Important Link</li>
+                <li class="text-green-800 text-sm tracking-tight">👨‍🚀 Super Important Link</li>
+     
+                <li class="text-green-800 text-sm tracking-tight">👨‍🚀 Super Important Link</li>
+
+            </ul>
+              <div class="flex absolute bottom-0  right-0 m-2 p-1 items-center bg-green-600 rounded-lg">
+
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+</svg>      <h2 class="text-white text-xs ">
+            
+            Go to page</h2>
+            </div>
+      
+        </div>
+        <!-- Nas -->
+
+        <!-- Workstations -->
+        <div class="relative bg-white shadow-lg rounded-md p-6 font-semibold text-xl tracking-wide">
+           <h1 class="text-2xl text-green-600 bg-gray-50 shadow p-1 rounded mb-2">Workstations</h1>
+                     <ul class="space-y-3 mb-8">
+                <li class="text-green-800 text-sm tracking-tight">👨‍🚀 Super Important Link</li>
+                <li class="text-green-800 text-sm tracking-tight">👨‍🚀 Super Important Link</li>
+         
+                <li class="text-green-800 text-sm tracking-tight">👨‍🚀 Super Important Link</li>
+                <li class="text-green-800 text-sm tracking-tight">👨‍🚀 Super Important Link</li>
+                <li class="text-green-800 text-sm tracking-tight">👨‍🚀 Super Important Link</li>
+
+            </ul>
+              <div class="flex absolute bottom-0  right-0 m-2 p-1 items-center bg-green-600 rounded-lg">
+
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+</svg>      <h2 class="text-white text-xs ">
+            
+            Go to page</h2>
+            </div>
+      
+        </div class="relative bg-white shadow-lg rounded-md p-6 font-semibold text-xl tracking-wide">
+        <!-- Workstations -->
+
+        <!-- Google Workspace -->
+        <div class="relative bg-white shadow-lg rounded-md p-6 font-semibold text-xl tracking-wide">
+        <h1 class="text-2xl text-green-600 bg-gray-50 shadow p-1 rounded mb-2">Google Workspace</h1>
+                  <ul class="space-y-3 mb-8">
+                <li class="text-green-800 text-sm tracking-tight">👨‍🚀 Super Important Link</li>
+                <li class="text-green-800 text-sm tracking-tight">👨‍🚀 Super Important Link</li>
+                <li class="text-green-800 text-sm tracking-tight">👨‍🚀 Super Important Link</li>
+           
+
+            </ul>
+              <div class="flex absolute bottom-0  right-0 m-2 p-1 items-center bg-green-600 rounded-lg">
+
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+</svg>      <h2 class="text-white text-xs ">
+            
+            Go to page</h2>
+            </div>
+      </div>
+        <!-- Google Workspace -->
+
+        <!-- Internal IT Processes -->
+        <div class="relative bg-white shadow-lg rounded-md p-6 font-semibold text-xl tracking-wide">
+        <h1 class="text-2xl text-green-600 bg-gray-50 shadow p-1 rounded mb-2">Internal IT Processes</h1>
+                  <ul class="space-y-3 mb-8">
+                <li class="text-green-800 text-sm tracking-tight">👨‍🚀 Super Important Link</li>
+ 
+                <li class="text-green-800 text-sm tracking-tight">👨‍🚀 Super Important Link</li>
+                <li class="text-green-800 text-sm tracking-tight">👨‍🚀 Super Important Link</li>
+                <li class="text-green-800 text-sm tracking-tight">👨‍🚀 Super Important Link</li>
+                <li class="text-green-800 text-sm tracking-tight">👨‍🚀 Super Important Link</li>
+                <li class="text-green-800 text-sm tracking-tight">👨‍🚀 Super Important Link</li>
+
+            </ul>
+              <div class="flex absolute bottom-0  right-0 m-2 p-1 items-center bg-green-600 rounded-lg">
+
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+</svg>      <h2 class="text-white text-xs ">
+            
+            Go to page</h2>
+            </div>
+      
+        </div>
+        <!-- Internal IT Processes -->
+
+        <!-- Windows Server 2019 -->
+        <div class="relative bg-white shadow-lg rounded-md p-6 font-semibold text-xl tracking-wide">
+            <h1 class="text-2xl text-green-600 bg-gray-50 shadow p-1 rounded mb-2">Windows Server 2019</h1>
+                      <ul class="space-y-3 mb-8">
+                <li class="text-green-800 text-sm tracking-tight">👨‍🚀 Super Important Link</li>
+                <li class="text-green-800 text-sm tracking-tight">👨‍🚀 Super Important Link</li>
+                <li class="text-green-800 text-sm tracking-tight">👨‍🚀 Super Important Link</li>
+
+                <li class="text-green-800 text-sm tracking-tight">👨‍🚀 Super Important Link</li>
+                <li class="text-green-800 text-sm tracking-tight">👨‍🚀 Super Important Link</li>
+
+            </ul>
+              <div class="flex absolute bottom-0  right-0 m-2 p-1 items-center bg-green-600 rounded-lg">
+
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+</svg>      <h2 class="text-white text-xs ">
+            
+            Go to page</h2>
+            </div>
+      
+        </div>
+        <!-- Windows Server 2019 -->
+
+
+        <!-- Licenses -->
+        <div class="relative bg-white shadow-lg rounded-md p-6 font-semibold text-xl tracking-wide">
+            <h1 class="text-2xl text-green-600 bg-gray-50 shadow p-1 rounded mb-2">Licenses</h1>
+                      <ul class="space-y-3 mb-8">
+                <li class="text-green-800 text-sm tracking-tight">👨‍🚀 Super Important Link</li>
+                <li class="text-green-800 text-sm tracking-tight">👨‍🚀 Super Important Link</li>
+                <li class="text-green-800 text-sm tracking-tight">👨‍🚀 Super Important Link</li>
+                <li class="text-green-800 text-sm tracking-tight">👨‍🚀 Super Important Link</li>
+                
+                <li class="text-green-800 text-sm tracking-tight">👨‍🚀 Super Important Link</li>
+
+            </ul>
+              <div class="flex absolute bottom-0  right-0 m-2 p-1 items-center bg-green-600 rounded-lg">
+
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+</svg>      <h2 class="text-white text-xs ">
+            
+            Go to page</h2>
+            </div>
+      
+        </div>
+        <!-- Licenses -->
+    </div>
+
+</div>
+<!--     <h1 class="text-2xl text-green-600 bg-gray-50 shadow p-1 rounded mb-2"> {{ post.title }}</h1>
+    <p> {{ post.content|convert_markdown|safe }}</p>
+    <hr> -->
+
+
+{% endblock content %}
