@@ -13,13 +13,21 @@
     @apply text-lg;
   }
   a {
-    @apply text-blue-900;
-    @apply font-semibold;
+    @apply text-green-500;
+    @apply font-semibold text-md;
   }
   img {
     @apply h-1/2 w-8/12 mx-auto;
   }
   hr {
     @apply h-0.5 w-full  bg-green-400;
+  }
+
+  code {
+    @apply text-lg text-red-600;
+  }
+
+  blockquote > p {
+    @apply flex justify-start text-yellow-900 text-2xl p-4 bg-yellow-100 rounded;
   }
 }

@@ -611,7 +611,9 @@ p {
 
 a {
   --tw-text-opacity: 1;
-  color: rgb(30 58 138 / var(--tw-text-opacity));
+  color: rgb(34 197 94 / var(--tw-text-opacity));
+  font-size: 1.125rem;
+  line-height: 1.75rem;
   font-weight: 600;
 }
 
@@ -627,6 +629,26 @@ hr {
   width: 100%;
   --tw-bg-opacity: 1;
   background-color: rgb(74 222 128 / var(--tw-bg-opacity));
+}
+
+code {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  --tw-text-opacity: 1;
+  color: rgb(220 38 38 / var(--tw-text-opacity));
+}
+
+blockquote > p {
+  display: flex;
+  justify-content: flex-start;
+  border-radius: 0.25rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 249 195 / var(--tw-bg-opacity));
+  padding: 1rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  --tw-text-opacity: 1;
+  color: rgb(113 63 18 / var(--tw-text-opacity));
 }
 
 *, ::before, ::after {
