@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+{% load article_extras %}
+{% load static %}
+{% block content %}
+
+{% if article.id is 1 %}
+
+{% for network in networks %}  
+
+<div class="flex flex-col">
+{{ network.title }}
+{{ network.content }}
+
+</div>
+<hr>
+
+{% endfor %}
+
+{% elif article.id is 2 %}
+
+ {% for tool in tools %}
+
+<div class="flex flex-col">
+{{ tool.title }}
+{{ tool.content }}
+
+</div>
+<hr>
+
+{% endfor %}
+
+{% elif article.id is 3 %}
+
+{% for na in nas %}
+
+<div class="flex flex-col">
+{{ na.title }}
+{{ na.content }}
+
+</div>
+<hr>
+
+{% endfor %}
+
+{% elif article.id is 4 %}
+
+{% for work in workstation %}
+
+<div class="flex flex-col">
+{{ work.title }}
+{{ work.content }}
+
+</div>
+<hr>
+
+{% endfor %}
+
+{% elif article.id is 5 %}
+
+ {% for go in google %}
+
+<div class="flex flex-col">
+{{ go.title }}
+{{ go.content }}
+
+</div>
+<hr>
+
+{% endfor %}
+
+{% elif article.id is 6 %}
+
+{% for process in processes %}
+<div class="flex flex-col">
+{{ process.title }}
+{{ process.content }}
+
+</div>
+<hr>
+
+{% endfor %}
+
+{% elif article.id is 7 %}
+
+  {% for server in server_2019 %}
+
+<div class="flex flex-col">
+{{ server.title }}
+{{ server.content }}
+
+</div>
+<hr>
+
+{% endfor %}
+
+{% elif article.id is 8 %}
+
+{% for license in licenses %}
+
+<div class="flex flex-col">
+{{ license.title }}
+{{ license.content }}
+
+</div>
+<hr>
+
+{% endfor %}
+
+{% else %}
+Empty page, are you lost?
+
+
+
+{% endif %}
+
+{% endblock content %}

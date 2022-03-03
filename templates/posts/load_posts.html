@@ -9,7 +9,15 @@
 
 <div class="flex flex-col items-left justify-center w-1/2 mx-auto  min-h-screen space-y-3">
     
-    {% include 'posts/navbar.html' %} 
+    
+<div class="flex">
+	<ul class="flex space-x-2">
+		<li><a href="{% url 'home' %}">Home</a></li>
+		<li><a href="{% url 'update_post' post.id %}">Update</a></li>
+		<li><a href="{% url 'delete_post' post.id %}">Delete</a></li>
+	</ul>
+</div>
+
 
     {{ post.content|convert_markdown|safe }}
 
