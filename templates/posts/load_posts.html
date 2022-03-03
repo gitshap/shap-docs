@@ -1,11 +1,15 @@
-{% extends 'base_notailwind.html' %}
+{% extends 'base.html' %}
 {% load static %}
 {% load article_extras %}
 
 {% block title %}    {{ post.title }} {% endblock title %}
 {% block content %}
 
-<div class="container">
+
+
+<div class="flex flex-col items-left justify-center w-1/2 mx-auto  min-h-screen">
+    
+    {% include 'posts/navbar.html' %} 
 
     {{ post.content|convert_markdown|safe }}
 
