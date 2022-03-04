@@ -1,3 +1,4 @@
+from http.client import HTTPResponse
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from .models import Article, Post
@@ -67,9 +68,12 @@ def create_post(request):
 def view_post(request, id):
     template_name = 'posts/load_posts.html'
     post = Post.objects.get(id=id)
+    post_article = post.article
+    articles = Post.objects.filter(article=post_article)
 
     context = {
-        'post': post
+        'post': post,
+        'articles': articles
     }
     return render(request, template_name, context=context)
 
@@ -81,7 +85,7 @@ def update_post(request, id):
     if request.method == 'POST':
         if form.is_valid():
             form.save()
-            return redirect(home)
+            return redirect(view_post, id)
         else:
             return HttpResponse('Not submitted')
     context = {
@@ -94,7 +98,7 @@ def delete_post(request, id):
     template_name = 'posts/delete_post.html'
     get_post = Post.objects.get(id=id)
     get_post.delete()
-    return render(request, template_name, context=None)
+    return redirect(home)
 
 
 def all_post(request, id):
@@ -140,3 +144,29 @@ def all_post(request, id):
     }
 
     return render(request, template_name, context=context)
+
+
+def search_post(request):
+    template_name = 'posts/search_post.html'
+    result_html = 'posts/results.html'
+    results = ''
+    if request.method == 'POST':
+        query = request.POST.get('search', '1')
+        results = Post.objects.filter(content__icontains=query)
+        article = Post.objects.filter(title__icontains=query)
+        print(results)
+        context = {
+        'results': results,
+        'article': article
+        }
+        return render(request,result_html, context=context)
+    else:
+        context = {
+            'result': '1'
+        }
+        return render(request, template_name, context=context)
+
+
+    
+
+    

@@ -7,7 +7,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Markdown</title>
+    <script src="https://unpkg.com/htmx.org@1.7.0" integrity="sha384-EzBXYPt0/T6gxNp0nuPtLkmRpmDBbjg6WmCUZRLXBBwYYmwAUxzlSGej0ARHX0Bo" crossorigin="anonymous"></script>
+
+    <title>{% block title %} {%endblock title %}</title>
     {% tailwind_css %}
 
 
@@ -15,6 +17,12 @@
 </head>
 
 <body>
+    <div class="relative flex items-center justify-center space-x-2">
+        <a class="left-0" href="{% url 'home' %}"><h5 class="bg-yellow-200 p-4 text-lg font-bold rounded">Home</h5></a>
+        <a class="left-0" href="{% url 'create_post' %}"><h5 class="bg-yellow-200 p-4 text-lg font-bold rounded">Create Post</h5></a>
+        <a class="left-0" href="{% url 'search_post' %}"><h5 class="bg-yellow-200 p-4 text-lg font-bold rounded">Search</h5></a>
+
+    </div>
     
         {% block content %}
 

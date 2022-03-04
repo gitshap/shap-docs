@@ -20,7 +20,8 @@ class PostForm(ModelForm):
 
             'content': forms.Textarea(attrs={
             'class': 'resize w-10/12',
-            'cols': '250',
+            'cols': '170',
+            'height' '250'
             'placeholder': 'content',
             }),
         }

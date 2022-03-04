@@ -2,24 +2,36 @@
 {% load static %}
 {% load article_extras %}
 
-{% block title %}    {{ post.title }} {% endblock title %}
+{% block title %} {{ post.title }} {% endblock title %}
 {% block content %}
 
 
 
-<div class="flex flex-col items-left justify-center w-1/2 mx-auto  min-h-screen space-y-3">
-    
-    
-<div class="flex">
-	<ul class="flex space-x-2">
-		<li><a href="{% url 'home' %}">Home</a></li>
-		<li><a href="{% url 'update_post' post.id %}">Update</a></li>
-		<li><a href="{% url 'delete_post' post.id %}">Delete</a></li>
-	</ul>
-</div>
+<div class="relative flex flex-col items-left justify-center w-1/2 mx-auto  min-h-screen space-y-3">
+
+	<div class="flex flex-col absolute top-0 -left-52 w-32 space-y-3">
+		<h2 class="font-bold text-red-400">{{ post.article }}</h2>
+		<hr>
+		{% for article in articles %}
+
+		<a href="{% url 'view_post' article.id %}" class="bg-green-50 p-2">
+			<h5 class="text-lg text-green-900 bot underline">{{ article.title }}</h1>
+		</a>
+		{% endfor %}
+	</div>
+
+	<div class="flex">
+		<ul class="flex space-x-2">
+			<li><a href="{% url 'home' %}">Home</a></li>
+			<li><a href="{% url 'update_post' post.id %}">Update</a></li>
+			<li><a href="{% url 'delete_post' post.id %}">Delete</a></li>
+		</ul>
 
 
-    {{ post.content|convert_markdown|safe }}
+	</div>
+
+
+	{{ post.content|convert_markdown|safe }}
 
 </div>
 

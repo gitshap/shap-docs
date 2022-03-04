@@ -3,7 +3,7 @@
 
 {% load crispy_forms_tags %}
 
-
+{% block title %}{{ form.title.label}} {% endblock title %}
 {% block content %}
 
 <div class="flex flex-col items-center justify-center min-h-screen space-y-2">
