@@ -6,7 +6,9 @@ from .models import Article, Post
 from .forms import PostForm
 from django.contrib.postgres.search import SearchHeadline, SearchQuery
 
-
+from django.contrib import messages
+from django.core.exceptions import ObjectDoesNotExist
+from django.urls import NoReverseMatch
 
 def home(request):
     template_name = 'articles/articles.html'
@@ -69,16 +71,25 @@ def create_post(request):
 
 
 def view_post(request, id):
-    template_name = 'posts/load_posts.html'
-    post = Post.objects.get(id=id)
-    post_article = post.article
-    articles = Post.objects.filter(article=post_article)
+    try:
 
-    context = {
-        'post': post,
-        'articles': articles
-    }
-    return render(request, template_name, context=context)
+        template_name = 'posts/load_posts.html'
+        post = Post.objects.get(id=id)
+        post_article = post.article
+        articles = Post.objects.filter(article=post_article)
+
+        context = {
+            'post': post,
+            'articles': articles
+        }
+        return render(request, template_name, context=context)
+    except NoReverseMatch:
+        return redirect(home)
+    except ObjectDoesNotExist:
+        return redirect(home)
+
+
+
 
 
 def update_post(request, id):
@@ -99,9 +110,10 @@ def update_post(request, id):
 
 def delete_post(request, id):
     template_name = 'posts/delete_post.html'
+    messages.error(request, 'Document deleted.')
     get_post = Post.objects.get(id=id)
     get_post.delete()
-    return redirect(home)
+    return render(request, template_name, context=None)
 
 
 def all_post(request, id):
