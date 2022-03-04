@@ -13,8 +13,11 @@
         <form onkeydown="return event.key != 'Enter';" method="POST">
             {% csrf_token %}
             <input type="search" name="search" id="search" placeholder="Begin Typing To Search Users..."
-                hx-post="{% url 'search_post' %}" hx-trigger="keyup changed delay:500ms, search"
-                hx-target="#search-results" hx-indicator=".htmx-indicator">
+                autocomplete="off" hx-post="{% url 'search_post' %}" hx-trigger="keyup changed delay:500ms, search"
+                hx-target="#search-results" hx-indicator="#spinner">
+            <div id="spinner" class="htmx-indicator">
+                <h1>Searching....</h1>
+            </div>
         </form>
 
     </div>
