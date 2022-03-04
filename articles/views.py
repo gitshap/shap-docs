@@ -1,8 +1,11 @@
 from http.client import HTTPResponse
+from re import search
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from .models import Article, Post
 from .forms import PostForm
+from django.contrib.postgres.search import SearchHeadline, SearchQuery
+
 
 
 def home(request):
@@ -152,12 +155,23 @@ def search_post(request):
     results = ''
     if request.method == 'POST':
         query = request.POST.get('search', '1')
-        results = Post.objects.filter(content__icontains=query)
-        article = Post.objects.filter(title__icontains=query)
-        print(results)
+        searched_query = SearchQuery(query)
+
+        search_headline = SearchHeadline("content", searched_query,
+        start_sel='<span class="font-bold text-red-400 text-3xl">',
+            stop_sel='</span>')
+
+        results = Post.objects.annotate(
+            headline=search_headline,
+            
+        ).filter(content__search=searched_query)
+
+        article = Post.objects.filter(title__search=searched_query)
+        print(f'Results {results}')
+        print(f'Articles {article}')
         context = {
         'results': results,
-        'article': article
+        'articles': article
         }
         return render(request,result_html, context=context)
     else:

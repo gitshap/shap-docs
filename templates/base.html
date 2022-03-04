@@ -17,15 +17,23 @@
 </head>
 
 <body>
-    <div class="relative flex items-center justify-center space-x-2">
-        <a class="left-0" href="{% url 'home' %}"><h5 class="bg-yellow-200 p-4 text-lg font-bold rounded">Home</h5></a>
-        <a class="left-0" href="{% url 'create_post' %}"><h5 class="bg-yellow-200 p-4 text-lg font-bold rounded">Create Post</h5></a>
-        <a class="left-0" href="{% url 'search_post' %}"><h5 class="bg-yellow-200 p-4 text-lg font-bold rounded">Search</h5></a>
-
-    </div>
+    <div class="flex flex-col">
+        <div class="fixed z-40 w-full flex items-center justify-center space-x-2 pt-1 ">
+            <a class="left-0" href="{% url 'home' %}"><h5 class="bg-yellow-200 p-4 text-lg font-bold rounded">Home</h5></a>
+            <a class="left-0" href="{% url 'create_post' %}"><h5 class="bg-yellow-200 p-4 text-lg font-bold rounded">Create Post</h5></a>
+            <a class="left-0" href="{% url 'search_post' %}"><h5 class="bg-yellow-200 p-4 text-lg font-bold rounded">Search</h5></a>
     
-        {% block content %}
+        </div>
+        
+           <div>
+            {% block content %}
 
-        {% endblock content %}
+            {% endblock content %}
+           </div>
+ 
+    </div>
+
+ 
+       
 </body>
 </html>
