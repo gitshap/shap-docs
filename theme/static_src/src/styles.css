@@ -43,4 +43,7 @@
   ol {
     @apply list-decimal pl-4;
   }
+  ul{
+    @apply list-disc pl-4;
+  }
 }
