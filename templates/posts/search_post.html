@@ -10,6 +10,7 @@
 
     <div class="mt-32">
         <h3>Search</h3>
+        <!-- TODO: Refactor this to JS -->
         <form onkeydown="return event.key != 'Enter';" method="POST">
             {% csrf_token %}
             <input type="search" name="search" id="search" placeholder="Begin Typing To Search Users..."
