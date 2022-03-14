@@ -10,7 +10,7 @@
         <div class="">
           
             <a href="{% url 'view_post' result.id %}">{{ result.title }}</a>
-            <p class="z-50 bg-white shadow-md p-2">{{ result.headline|convert_markdown|safe }}</p>
+            <p class="z-50">{{ result.headline|convert_markdown|safe }}</p>
         </div>
         {% endfor %}
       
