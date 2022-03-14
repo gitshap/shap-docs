@@ -14,28 +14,25 @@
   <div class="grid grid-cols-4 gap-3 text-center">
     <!-- Internal Tools -->
     <div class="relative bg-white shadow-lg rounded-md p-6 font-semibold text-xl tracking-wide">
-      <h1 class="text-2xl text-green-600 bg-gray-50 shadow p-1 rounded mb-2">Internal Tools</h1>
+      <h1 class="text-2xl text-green-900 bg-gray-50 shadow p-1 rounded mb-2">Internal Tools</h1>
       <ul class="space-y-3 mb-8 list-none">
 
 
         {% for tool in tools %}
-        <li class="text-green-800 text-sm tracking-tight"><a href="{% url 'view_post' tool.id %}">{{ tool.title }}</a>
+        <li class="text-green-900 text-sm tracking-tight"><a href="{% url 'view_post' tool.id %}">{{ tool.title }}</a>
         </li>
         {% endfor %}
 
 
 
       </ul>
-      <div class="flex absolute bottom-0  right-0 m-2 p-1 items-center">
+   
 
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24"
-          stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-        </svg>
-        <h2 class="text-white text-xs ">
 
-          <a class="text-lg" href="{% url 'all_post' 2 %}">Go to page</a></h2>
-      </div>
+
+          <a class="bg-yellow-300 p-1 rounded shadow-sm hover:bg-yellow-200 hover:text-green-800 absolute bottom-0 right-0 m-2 flex items-center text-lg" href="{% url 'all_post' 2 %}">
+           <h5 class="font-semibold tracking-normal">Go to page</h5></a>
+     
 
     </div>
     <!-- Internal Tools -->
@@ -43,118 +40,114 @@
 
     <!-- Network -->
     <div class="relative bg-white shadow-lg rounded-md p-6 font-semibold text-xl tracking-wide">
-      <h1 class="text-2xl text-green-600 bg-gray-50 shadow p-1 rounded mb-2">Network</h1>
+      <h1 class="text-2xl text-green-900 bg-gray-50 shadow p-1 rounded mb-2">Network</h1>
       <ul class="space-y-3 mb-8 list-none">
 
         {% for network in networks %}
-        <li class="text-green-800 text-sm tracking-tight"><a
+        <li class="text-green-900 text-sm tracking-tight"><a
             href="{% url 'view_post' network.id %}">{{ network.title }}</a></li>
         {% endfor %}
 
 
       </ul>
-      <div class="flex absolute bottom-0  right-0 m-2 p-1 items-center">
+      
 
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24"
-          stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-        </svg>
-        <h2 class="text-white text-xs ">
+       
+    
 
-          <a class="text-lg" href="{% url 'all_post' 1 %}">Go to page</a></h2>
-      </div>
+          <a class="bg-yellow-300 p-1 rounded shadow-sm hover:bg-yellow-200 hover:text-green-800 absolute bottom-0 right-0 m-2 flex items-center text-lg"  href="{% url 'all_post' 1 %}">
+            <h5 class="font-semibold tracking-normal">Go to page</h5>
+          </a>
+      
 
     </div>
     <!-- Network -->
 
     <!-- Nas -->
     <div class="relative bg-white shadow-lg rounded-md p-6 font-semibold text-xl tracking-wide">
-      <h1 class="text-2xl text-green-600 bg-gray-50 shadow p-1 rounded mb-2">NAS</h1>
+      <h1 class="text-2xl text-green-900 bg-gray-50 shadow p-1 rounded mb-2">NAS</h1>
       <ul class="space-y-3 mb-8 list-none">
 
         {% for na in nas %}
-        <li class="text-green-800 text-sm tracking-tight"><a href="{% url 'view_post' na.id %}">{{ na.title }}</a></li>
+        <li class="text-green-900 text-sm tracking-tight"><a href="{% url 'view_post' na.id %}">{{ na.title }}</a></li>
         {% endfor %}
 
 
       </ul>
-      <div class="flex absolute bottom-0  right-0 m-2 p-1 items-center">
+      
 
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24"
-          stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-        </svg>
-        <h2 class="text-white text-xs ">
+       
+    
 
-          <a class="text-lg" href="{% url 'all_post' 3 %}">Go to page</a></h2>
-      </div>
+          <a class="bg-yellow-300 p-1 rounded shadow-sm hover:bg-yellow-200 hover:text-green-800 absolute bottom-0 right-0 m-2 flex items-center text-lg"  href="{% url 'all_post' 3 %}">
+            <h5 class="font-semibold tracking-normal">Go to page</h5>
+          </a>
+      
 
     </div>
     <!-- Nas -->
 
     <!-- Workstations -->
     <div class="relative bg-white shadow-lg rounded-md p-6 font-semibold text-xl tracking-wide">
-      <h1 class="text-2xl text-green-600 bg-gray-50 shadow p-1 rounded mb-2">Workstations</h1>
+      <h1 class="text-2xl text-green-900 bg-gray-50 shadow p-1 rounded mb-2">Workstations</h1>
       <ul class="space-y-3 mb-8 list-none">
 
 
 
         {% for work in workstation %}
-        <li class="text-green-800 text-sm tracking-tight"><a href="{% url 'view_post' work.id %}">{{ work.title }}</a>
+        <li class="text-green-900 text-sm tracking-tight"><a href="{% url 'view_post' work.id %}">{{ work.title }}</a>
         </li>
         {% endfor %}
 
 
 
       </ul>
-      <div class="flex absolute bottom-0  right-0 m-2 p-1 items-center">
+      
 
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24"
-          stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-        </svg>
-        <h2 class="text-white text-xs ">
+       
+    
 
-          <a class="text-lg" href="{% url 'all_post' 4 %}">Go to page</a></h2>
-      </div>
+          <a class="bg-yellow-300 p-1 rounded shadow-sm hover:bg-yellow-200 hover:text-green-800 absolute bottom-0 right-0 m-2 flex items-center text-lg"  href="{% url 'all_post' 4 %}">
+            <h5 class="font-semibold tracking-normal">Go to page</h5>
+          </a>
+      
 
     </div class="relative bg-white shadow-lg rounded-md p-6 font-semibold text-xl tracking-wide">
     <!-- Workstations -->
 
     <!-- Google Workspace -->
     <div class="relative bg-white shadow-lg rounded-md p-6 font-semibold text-xl tracking-wide">
-      <h1 class="text-2xl text-green-600 bg-gray-50 shadow p-1 rounded mb-2">Google Workspace</h1>
+      <h1 class="text-2xl text-green-900 bg-gray-50 shadow p-1 rounded mb-2">Google Workspace</h1>
       <ul class="space-y-3 mb-8 list-none">
 
 
         {% for go in google %}
-        <li class="text-green-800 text-sm tracking-tight"><a href="{% url 'view_post' go.id %}">{{ go.title }}</a></li>
+        <li class="text-green-900 text-sm tracking-tight"><a href="{% url 'view_post' go.id %}">{{ go.title }}</a></li>
         {% endfor %}
 
 
       </ul>
-      <div class="flex absolute bottom-0  right-0 m-2 p-1 items-center">
+      
 
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24"
-          stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-        </svg>
-        <h2 class="text-white text-xs ">
+       
+    
 
-          <a class="text-lg" href="{% url 'all_post' 5 %}">Go to page</a></h2>
-      </div>
+          <a class="bg-yellow-300 p-1 rounded shadow-sm hover:bg-yellow-200 hover:text-green-800 absolute bottom-0 right-0 m-2 flex items-center text-lg"  href="{% url 'all_post' 5 %}">
+            <h5 class="font-semibold tracking-normal">Go to page</h5>
+          </a>
+      
     </div>
     <!-- Google Workspace -->
 
     <!-- Internal IT Processes -->
     <div class="relative bg-white shadow-lg rounded-md p-6 font-semibold text-xl tracking-wide">
-      <h1 class="text-2xl text-green-600 bg-gray-50 shadow p-1 rounded mb-2">Internal IT Processes</h1>
+      <h1 class="text-2xl text-green-900 bg-gray-50 shadow p-1 rounded mb-2">Internal IT Processes</h1>
       <ul class="space-y-3 mb-8 list-none">
 
 
 
         {% for process in processes %}
-        <li class="text-green-800 text-sm tracking-tight"><a
+        <li class="text-green-900 text-sm tracking-tight"><a
             href="{% url 'view_post' process.id %}">{{ process.title }}</a></li>
         {% endfor %}
 
@@ -162,29 +155,28 @@
 
 
       </ul>
-      <div class="flex absolute bottom-0  right-0 m-2 p-1 items-center">
+      
 
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24"
-          stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-        </svg>
-        <h2 class="text-white text-xs ">
+       
+    
 
-          <a class="text-lg" href="{% url 'all_post' 6 %}">Go to page</a></h2>
-      </div>
+          <a class="bg-yellow-300 p-1 rounded shadow-sm hover:bg-yellow-200 hover:text-green-800 absolute bottom-0 right-0 m-2 flex items-center text-lg"  href="{% url 'all_post' 6 %}">
+            <h5 class="font-semibold tracking-normal">Go to page</h5>
+          </a>
+      
 
     </div>
     <!-- Internal IT Processes -->
 
     <!-- Windows Server 2019 -->
     <div class="relative bg-white shadow-lg rounded-md p-6 font-semibold text-xl tracking-wide">
-      <h1 class="text-2xl text-green-600 bg-gray-50 shadow p-1 rounded mb-2">Windows Server 2019</h1>
+      <h1 class="text-2xl text-green-900 bg-gray-50 shadow p-1 rounded mb-2">Windows Server 2019</h1>
       <ul class="space-y-3 mb-8 list-none">
 
 
 
         {% for server in server_2019 %}
-        <li class="text-green-800 text-sm tracking-tight"><a
+        <li class="text-green-900 text-sm tracking-tight"><a
             href="{% url 'view_post' server.id %}">{{ server.title }}</a></li>
         {% endfor %}
 
@@ -192,16 +184,15 @@
 
 
       </ul>
-      <div class="flex absolute bottom-0  right-0 m-2 p-1 items-center">
+      
 
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24"
-          stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-        </svg>
-        <h2 class="text-white text-xs ">
+       
+    
 
-          <a class="text-lg" href="{% url 'all_post' 7 %}">Go to page</a></h2>
-      </div>
+          <a class="bg-yellow-300 p-1 rounded shadow-sm hover:bg-yellow-200 hover:text-green-800 absolute bottom-0 right-0 m-2 flex items-center text-lg"  href="{% url 'all_post' 7 %}">
+            <h5 class="font-semibold tracking-normal">Go to page</h5>
+          </a>
+      
 
     </div>
     <!-- Windows Server 2019 -->
@@ -209,13 +200,13 @@
 
     <!-- Licenses -->
     <div class="relative bg-white shadow-lg rounded-md p-6 font-semibold text-xl tracking-wide">
-      <h1 class="text-2xl text-green-600 bg-gray-50 shadow p-1 rounded mb-2">Licenses</h1>
+      <h1 class="text-2xl text-green-900 bg-gray-50 shadow p-1 rounded mb-2">Licenses</h1>
       <ul class="space-y-3 mb-8 list-none">
 
 
 
         {% for license in licenses %}
-        <li class="text-green-800 text-sm tracking-tight"><a
+        <li class="text-green-900 text-sm tracking-tight"><a
             href="{% url 'view_post' license.id %}">{{ license.title }}</a></li>
         {% endfor %}
 
@@ -223,16 +214,15 @@
 
 
       </ul>
-      <div class="flex absolute bottom-0  right-0 m-2 p-1 items-center">
+      
 
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24"
-          stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-        </svg>
-        <h2 class="text-white text-xs ">
+       
+    
 
-          <a class="text-lg" href="{% url 'all_post' 8 %}">Go to page</a></h2>
-      </div>
+          <a class="bg-yellow-300 p-1 rounded shadow-sm hover:bg-yellow-200 hover:text-green-800 absolute bottom-0 right-0 m-2 flex items-center text-lg"  href="{% url 'all_post' 8 %}">
+            <h5 class="font-semibold tracking-normal">Go to page</h5>
+          </a>
+      
 
     </div>
     <!-- Licenses -->

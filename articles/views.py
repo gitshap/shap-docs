@@ -195,4 +195,11 @@ def search_post(request):
 
     
 
-    
+
+def testing_tailwind(request):
+    template_name = 'a.html'
+    hello = 'hello'
+    context = {
+        'hello': hello
+    }
+    return render(request, template_name, context=context)
