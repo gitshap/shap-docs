@@ -56,7 +56,7 @@
 
 			</div>
 		</div>
-		<div class="bg-white shadow-md p-12">
+		<div class="flex-1 w-full bg-white shadow-md p-12">
 			{{ post.content|convert_markdown|safe}}
 
 		</div>
@@ -67,15 +67,6 @@
 	<!-- Controls -->
 	<div class="flex-auto w-20 min-h-screen bg-gray-100 sticky">
 		<div class="sticky top-0 flex flex-col h-screen justify-start m-16 ">
-
-			<!-- <ul class="mb-32 bg-white p-8 shadow-md w-80">
-        <li>Details</li>
-        <li>Page Title</li>
-        <li>Page Tags</li>
-        <li>Parent Article</li>
-        <li>Created by:</li>
-        <li>Updated at:</li>
-      </ul> -->
 			<ul class="space-y-10">
 				<li class="font-semibold text-green-900 text-xl">Actions</li>
 				<li><a href="{% url 'update_post' post.id %}">

@@ -16,7 +16,7 @@
     @apply text-lg mb-6 hover:text-green-900;
   }
   a {
-    @apply text-green-900 mb-6 text-lg;
+    @apply text-green-900 mb-6 text-lg font-semibold;
   }
 
   h4 {

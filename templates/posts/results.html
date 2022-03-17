@@ -12,23 +12,29 @@
 
 
         {% for result in results %}
-        <div class="p-2">
+        <a href="{% url 'view_post' result.id %}" class="">
+        <div class="p-2 hover:bg-gray-300 rounded">
 
-            <a href="{% url 'view_post' result.id %}" class="hover:bg-gray-300 rounded">
+          
                 <h5 class="text-4xl text-green-900"> > {{ result.title }}</h5>
                 <h5 class="z-50 text-2xl">{{ result.headline|truncatechars:100|convert_markdown|safe }}</h5>
-            </a>
+           
 
         </div>
+    </a>
         <hr>
         {% endfor %}
 
-        <div class="p-2">
-            {% for article in articles %}
-            <a class="" href="{% url 'view_post' article.id %}">{{ article.title }}</a>
+        {% for article in articles %}
+        <a class="" href="{% url 'view_post' article.id %}">
+        <div class="hover:bg-gray-300 p-2">
+          
+            {{ article.title }}
 
-            {% endfor %}
+        
         </div>
+    </a>
+    {% endfor %}
 
     </div>
 
