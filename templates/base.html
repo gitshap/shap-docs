@@ -1,44 +1,90 @@
 {% load tailwind_tags %}
 
-
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head> 
-   {% tailwind_css %}
+
+<head>
+    {% tailwind_css %}
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://unpkg.com/htmx.org@1.7.0" integrity="sha384-EzBXYPt0/T6gxNp0nuPtLkmRpmDBbjg6WmCUZRLXBBwYYmwAUxzlSGej0ARHX0Bo" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/htmx.org@1.7.0"
+        integrity="sha384-EzBXYPt0/T6gxNp0nuPtLkmRpmDBbjg6WmCUZRLXBBwYYmwAUxzlSGej0ARHX0Bo" crossorigin="anonymous">
+    </script>
     <script>
         document.body.addEventListener('htmx:configRequest', (event) => {
-          event.detail.headers['X-CSRFToken'] = '{{ csrf_token }}';
+            event.detail.headers['X-CSRFToken'] = '{{ csrf_token }}';
         })
-      </script>
+    </script>
     <title>{% block title %} {%endblock title %}</title>
-  
+
+
 
 
 
 </head>
 
-<body>
-    <div class="flex flex-col">
-        <div class="fixed z-40 w-full flex items-center justify-center space-x-2 pt-1 ">
-            <a class="left-0" href="{% url 'home' %}"><h5 class="bg-yellow-300 p-4 text-lg font-bold rounded">Home</h5></a>
-            <a class="left-0" href="{% url 'create_post' %}"><h5 class="bg-yellow-300 p-4 text-lg font-bold rounded">Create Post</h5></a>
-            <a class="left-0" href="{% url 'search_post' %}"><h5 class="bg-yellow-300 p-4 text-lg font-bold rounded">Search</h5></a>
-    
-        </div>
-        
-           <div>
+<body class="bg-gray-100">
+
+    <div class="flex justify-center mx-auto">
+
+        <div class="flex flex-col w-full items-center justify-center">
+
+            <!-- Header -->
+            <div class="w-full bg-green-900 px-4  h-20 items-center justify-between flex pt-4">
+                <h1 class="text-yellow-300 text-lg font-semibold">
+                    <img src="{% static 'images/chop.png' %}" class="h-14 w-14 rounded-full" alt="">
+                </h1>
+
+                <div class="search-input flex items-center justify-center space-x-10">
+                    <form action="{% url 'search_post' %}" method="POST" class="pb-5">
+                        {% csrf_token %}
+
+                        <div class="flex items-center-justify-center space-x-3">
+                            <input type="text" name="search" id="search" placeholder="Search" autocomplete="off"
+                            class="focus:ring-green-900 text-white placeholder-yellow-100 border-yellow-300 border-b-2 focus:border-yellow-300 border-t-0 border-l-0 border-r-0 bg-transparent focus:outline-none w-96">
+                        <button type="submit" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-300" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                            </svg>
+                        </button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="flex space-x-9 items-center pt-8">
+                    <a href="{% url 'home' %}">
+                        <h1 class="text-yellow-300 text-lg font-semibold">
+                            Home
+                        </h1>
+                    </a>
+                    <a href="#">
+                        <h1 class="text-yellow-300 text-lg font-semibold">
+                            All Posts
+                        </h1>
+                    </a>
+                    <a href="{% url 'create_post' %}">
+                        <h1 class="bg-yellow-300 p-3 text-green-900 font-bold text-lg ">
+                            Create New Post
+                        </h1>
+                    </a>
+                </div>
+            </div>
             {% block content %}
 
             {% endblock content %}
-           </div>
- 
+
+        </div>
+
+
     </div>
 
- 
-       
+
+
+
 </body>
+
 </html>

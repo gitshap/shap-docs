@@ -15,7 +15,7 @@
             {% csrf_token %}
             <button type="submit" disabled style="display: none" aria-hidden="true"></button>
             <input type="search" name="search" id="search" placeholder="Begin Typing To Search Users..."
-                autocomplete="off" hx-post="{% url 'search_post' %}" hx-trigger="keyup changed delay:500ms, search"
+                autocomplete="off" hx-post="{% url 'search_post' %}"
                 hx-target="#search-results" hx-indicator="#spinner">
             <div id="spinner" class="htmx-indicator">
                 <h1>Searching....</h1>

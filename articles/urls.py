@@ -16,5 +16,5 @@ urlpatterns = [
     path('post/all_post/<int:id>', views.all_post, name='all_post'),
     path('post/search_post/', views.search_post, name='search_post'),
 
-    path('test/', views.testing_tailwind, name='testing_tailwind')
+    path('post/export_pdf/<int:id>', views.export_to_pdf, name='export_to_pdf'),
 ]
