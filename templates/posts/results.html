@@ -13,7 +13,7 @@
 
         {% for result in results %}
         <a href="{% url 'view_post' result.id %}" class="">
-        <div class="p-2 hover:bg-gray-300 rounded">
+        <div class="p-2 hover:bg-yellow-300 rounded">
 
           
      
@@ -33,7 +33,7 @@
 
         {% for article in articles %}
         <a class="" href="{% url 'view_post' article.id %}">
-        <div class="hover:bg-gray-300 p-2">
+        <div class="hover:bg-yellow-300 p-2">
           
             {{ article.title }}
 

@@ -6,32 +6,34 @@
 {% block title %}{{ form.title.label}} {% endblock title %}
 {% block content %}
 
-<div class="flex flex-col items-center justify-center min-h-screen space-y-2">
+<div class="flex flex-col items-center justify-center min-h-screen">
 
-    <form method="POST">
+<div class="m-3 space-y-64">
+    <form method="POST" class="flex flex-col items-center  space-y-2">
         {% csrf_token %}
 
-        <div>
-            {{ form.title.label}}
+        <div class="flex rounded flex-col items-center justify-center">
+           <h5 class="text-2xl text-green-900 font-semibold"> {{ form.title.label}}</h5>
             {{ form.title }}
         </div>
 
 
-        <div class="resize">
-            {{ form.content.label }}
-            {{ form.content }}
+        <div class="resize  focus:border-red-500 border-none flex flex-col items-center justify-center">
+          <h5 class="text-2xl text-green-900 font-semibold">  {{ form.content.label }}</h5>
+           {{ form.content }}
         </div>
 
-        <div>
-            {{ form.article.label }}
+        <div class="flex flex-col items-center justify-center">
+       <h5 class="text-2xl text-green-900 font-semibold">     {{ form.article.label }}</h5>
             {{ form.article }}
         </div>
 
-        <input class="bg-green-300 p-3 rounded" type="submit" value="Submit" />
+       <button type="submit" class="bg-yellow-300 text-green-900 rounded p-2">Submit</button>
 
 
     </form>
 
+</div>
 
 </div>
 {% endblock content %}

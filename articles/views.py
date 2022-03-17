@@ -69,9 +69,11 @@ def update_post(request, id):
     template_name = 'posts/update_post.html'
     get_post = Post.objects.get(id=id)
     form = PostForm(request.POST or None, instance=get_post)
+    print(form)
     if request.method == 'POST':
         if form.is_valid():
             form.save()
+            print(form)
             return redirect(view_post, id)
         else:
             return HttpResponse('Not submitted')

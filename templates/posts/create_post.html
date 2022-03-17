@@ -35,15 +35,15 @@
                 </div>
 
 
-                <div class="flex bg-red items-center space-x-2">
-                    {{ form.article.label_tag }}
+                <div class="flex space-x-2 justify-start">
+                  <div class="text-xl text-green-900 font-bold">  {{ form.article.label_tag }}</div>
                     {{ form.article }}
 
                 </div>
             </div>
          
         </div>
-        <input class="flex justify-start bg-green-300 p-3 rounded mt-10" type="submit" value="Submit" />
+        <button class="flex justify-start bg-yellow-300 text-green-900 p-3 rounded mt-10 font-semibold" type="submit">Submit</button>
 
     </form>
 

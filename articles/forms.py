@@ -14,13 +14,13 @@ class PostForm(ModelForm):
         fields = ('title', 'content', 'article', )
         widgets = {
             'title': forms.TextInput(attrs={
-            'class': 'bg-red-100',
+            'class': 'focus:ring-0  placeholder-yellow-100 border-yellow-300 border-2 focus:border-yellow-300 bg-transparent focus:outline-none',
             'placeholder': 'Title',
             }),
 
             'content': forms.Textarea(attrs={
-            'class': 'resize w-10/12',
-            'cols': '170',
+            'class': 'resize w-11/12  placeholder-yellow-100  focus:border-yellow-300 bg-transparent focus:outline-none w-96 ',
+            'cols': '250',
             'height' '250'
             'placeholder': 'content',
             }),
