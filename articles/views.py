@@ -9,6 +9,8 @@ from django.contrib.postgres.search import SearchHeadline, SearchQuery
 from django.contrib import messages
 from django.core.exceptions import ObjectDoesNotExist
 from django.urls import NoReverseMatch
+from django.db.models import Count
+
 
 
 import io
@@ -19,9 +21,11 @@ def home(request):
     template_name = 'articles/articles.html'
     article = Article.objects.all()
 
+    
+
 
     context = {
-        'articles': article
+        'articles': article,
 
     }
     return render(request, template_name, context=context)

@@ -38,9 +38,9 @@
          <h5 class="font-semibold text-2xl text-green-900 w-full"> {{ article.title }}</h5>
 
           <div class="flex flex-col justify-end">
-            <h5 class="text-green-900 text-sm">Created by: </h5>
-            <h5 class="text-green-900 text-sm">Updated last: </h5>
-            <h5 class="text-green-900 text-sm">Pages: </h5>
+            <h5 class="text-green-900 text-sm">Created by: Carl</h5>
+            <h5 class="text-green-900 text-sm">Updated last: Carl</h5>
+            <h5 class="text-green-900 text-sm">Pages: {{ article.post_set.all|length }}</h5>
           </div>
          </div>
         </div>
