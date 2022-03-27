@@ -156,11 +156,11 @@ def export_to_pdf(request, id):
     post = Post.objects.get(id=id)
     content = post.content
     try:
-        f = open(f"exported/exported-{post.id}.md", "x")
+        f = open(f"exported/exported-{post.id}.md", "w")
         f.write(content)
         f.close()
     except FileExistsError:
-        f = open(f"exported/exported-{post.id}.md", "x")
+        f = open(f"exported/exported-{post.id}.md", "w")
         f.write(content)
         f.close()
 
