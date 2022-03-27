@@ -27,3 +27,23 @@ class PostForm(ModelForm):
         }
 
 
+
+class ArticleForm(ModelForm):
+
+
+    class Meta:
+        model = models.Article
+        fields = ('title', 'content' )
+        widgets = {
+            'title': forms.TextInput(attrs={
+            'class': 'focus:ring-0  placeholder-yellow-100 border-yellow-300 border-2 focus:border-yellow-300 bg-transparent focus:outline-none',
+            'placeholder': 'Title',
+            }),
+
+            'content': forms.Textarea(attrs={
+            'class': 'resize w-11/12  h-full placeholder-yellow-100  focus:border-yellow-300 bg-transparent focus:outline-none',
+            'cols': '150',
+          
+            'placeholder': 'content',
+            }),
+        }

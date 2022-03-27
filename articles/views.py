@@ -5,7 +5,7 @@ from tkinter import E
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from .models import Article, Post
-from .forms import PostForm
+from .forms import ArticleForm, PostForm
 from django.contrib.postgres.search import SearchHeadline, SearchQuery
 
 from django.contrib import messages
@@ -48,6 +48,21 @@ def create_post(request):
     }
     return render(request, template_name, context=context)
 
+
+def create_article(request):
+    template_name = 'articles/create_article.html'
+    form = ArticleForm(request.POST or None)
+    if request.method == 'POST':
+        if form.is_valid():
+            form = ArticleForm(request.POST or None)
+            form.save()
+            return redirect(home)
+        else:
+            return HttpResponse('Not submitted')
+    context = {
+        'form': form
+    }
+    return render(request, template_name, context=context)
 
 def view_post(request, id):
     try:

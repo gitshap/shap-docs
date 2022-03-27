@@ -19,4 +19,6 @@ urlpatterns = [
     path('post/export_pdf/<int:id>', views.export_to_pdf, name='export_to_pdf'),
 
     path('post/posts/', views.posts, name='posts'),
+
+    path('articles/create_article', views.create_article, name='create_article'),
 ]
