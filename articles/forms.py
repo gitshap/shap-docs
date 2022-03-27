@@ -19,9 +19,9 @@ class PostForm(ModelForm):
             }),
 
             'content': forms.Textarea(attrs={
-            'class': 'resize w-11/12  placeholder-yellow-100  focus:border-yellow-300 bg-transparent focus:outline-none w-96 ',
-            'cols': '250',
-            'height' '250'
+            'class': 'resize w-11/12  h-full placeholder-yellow-100  focus:border-yellow-300 bg-transparent focus:outline-none',
+            'cols': '150',
+          
             'placeholder': 'content',
             }),
         }

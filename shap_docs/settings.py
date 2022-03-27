@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-m$j!%!&l2*8241dm28l!d-aiy7bo7sq073w(l#v_34xe5erj0k
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -48,7 +48,9 @@ INSTALLED_APPS = [
 
     'tailwind',
     'theme',
-    'django_browser_reload'
+    'django_browser_reload',
+
+    "corsheaders",
 
 
 
@@ -56,12 +58,14 @@ INSTALLED_APPS = [
 
 ]
 
-
+CORS_ALLOWED_ORIGINS = ["https://unlucky-parrot-6.loca.lt"]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
+    "django.middleware.common.CommonMiddleware",
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -166,6 +170,6 @@ INTERNAL_IPS = [
     "127.0.0.1",
 ]
 
-NPM_BIN_PATH = r"C:\Program Files\nodejs\npm.cmd"
+NPM_BIN_PATH = r"/usr/bin/node"
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'

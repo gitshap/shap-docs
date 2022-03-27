@@ -123,10 +123,14 @@ def search_post(request):
 
         results = Post.objects.annotate(
             headline=search_headline,
-            
+       
         ).filter(content__search=searched_query)
-
-        article = Article.objects.filter(title__search=searched_query)
+        print(searched_query)
+        article = Post.objects.annotate(
+            headline=search_headline,
+       
+        ).filter(title__search=searched_query)
+        print(searched_query)
         print(f'Results {results}')
         print(f'Articles {article}')
         context = {
