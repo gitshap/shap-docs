@@ -17,4 +17,6 @@ urlpatterns = [
     path('post/search_post/', views.search_post, name='search_post'),
 
     path('post/export_pdf/<int:id>', views.export_to_pdf, name='export_to_pdf'),
+
+    path('post/posts/', views.posts, name='posts'),
 ]

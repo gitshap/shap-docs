@@ -1,5 +1,7 @@
 from http.client import HTTPResponse
+from random import randint
 from re import search
+from tkinter import E
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from .models import Article, Post
@@ -19,7 +21,7 @@ from reportlab.pdfgen import canvas
 
 def home(request):
     template_name = 'articles/articles.html'
-    article = Article.objects.all()
+    article = Article.objects.all()[:20]
 
     
 
@@ -124,12 +126,12 @@ def search_post(request):
         results = Post.objects.annotate(
             headline=search_headline,
        
-        ).filter(content__search=searched_query)
+        ).filter(content__search=searched_query)[:10]
         print(searched_query)
         article = Post.objects.annotate(
             headline=search_headline,
        
-        ).filter(title__search=searched_query)
+        ).filter(title__search=searched_query)[:10]
         print(searched_query)
         print(f'Results {results}')
         print(f'Articles {article}')
@@ -148,23 +150,26 @@ def search_post(request):
     
 
 
-def testing_tailwind(request):
-    template_name = 'a.html'
-    hello = 'hello'
-    context = {
-        'hello': hello
-    }
-    return render(request, template_name, context=context)
-
 
 def export_to_pdf(request, id):
-    buffer = io.BytesIO()
-    p = canvas.Canvas(buffer)
-    post = Post.objects.get(id=id)
-    p.drawString(0, 800, post.title)
-    p.drawString(0, 500, post.content)
 
-    p.showPage()
-    p.save()
-    buffer.seek(0)
-    return FileResponse(buffer, as_attachment=True, filename='post.pdf')
+    post = Post.objects.get(id=id)
+    content = post.content
+    try:
+        f = open(f"exported/exported-{post.id}.md", "x")
+        f.write(content)
+        f.close()
+    except FileExistsError:
+        f = open(f"exported/exported-{post.id}.md", "x")
+        f.write(content)
+        f.close()
+
+    return redirect(home)
+
+def posts(request):
+    template_name = 'posts/posts.html'
+    posts = Post.objects.all()[:10]
+    context = {
+        'posts': posts
+    }
+    return render(request, template_name, context=context)
