@@ -70,14 +70,12 @@ def view_post(request, id):
         post = Post.objects.get(id=id)
         post_article = post.article
         articles = Post.objects.filter(article=post_article)
-        print(post)
         context = {
             'post': post,
             'articles': articles
         }
         return render(request, template_name, context=context)
     except NoReverseMatch:
-        print(id)
         return redirect(home)
     except ObjectDoesNotExist:
         return redirect(home)
@@ -90,11 +88,9 @@ def update_post(request, id):
     template_name = 'posts/update_post.html'
     get_post = Post.objects.get(id=id)
     form = PostForm(request.POST or None, instance=get_post)
-    print(form)
     if request.method == 'POST':
         if form.is_valid():
             form.save()
-            print(form)
             return redirect(view_post, id)
         else:
             return HttpResponse('Not submitted')
@@ -142,14 +138,10 @@ def search_post(request):
             headline=search_headline,
        
         ).filter(content__search=searched_query)[:10]
-        print(searched_query)
         article = Post.objects.annotate(
             headline=search_headline,
        
         ).filter(title__search=searched_query)[:10]
-        print(searched_query)
-        print(f'Results {results}')
-        print(f'Articles {article}')
         context = {
         'results': results,
         'articles': article
